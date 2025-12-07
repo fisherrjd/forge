@@ -3,7 +3,7 @@ package cmd
 import (
   "fmt"
   "github.com/spf13/cobra"
-  "github.com/fisherrjd/forge/search"
+  "github.com/fisherrjd/forge/internal/search"
 )
 
 const search_text = "Searching for dependency..."
