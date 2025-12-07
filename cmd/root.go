@@ -14,9 +14,9 @@ var (
 )
 
 var rootCmd = &cobra.Command{
-  Use:   "simple-cli",
-  Short: "A simple CLI that greets you",
-  Long:  "A simple CLI tool built with Cobra in Go that prints a greeting message. You can customize the greeting and name using flags.",
+  Use:   "forge",
+  Short: "A CLI tool for managing Java Maven projects with ease",
+  Long:  "Forge is a modern command-line tool that simplifies Java Maven project management.",
   Run: func(cmd *cobra.Command, args []string) {
     hello := fmt.Sprintf("%s, %s!", greeting, name)
     fmt.Println(hello)
@@ -25,6 +25,9 @@ var rootCmd = &cobra.Command{
 
 func Execute() {
   rootCmd.AddCommand(versionCmd)
+  rootCmd.AddCommand(addCmd)
+  rootCmd.AddCommand(searchCmd)
+  rootCmd.AddCommand(buildCmd)
   rootCmd.PersistentFlags().StringVar(&name, "name", "World", "Your name")
   rootCmd.PersistentFlags().StringVar(&greeting, "greeting", "Hello", "Greeting message")
 

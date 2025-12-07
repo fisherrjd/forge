@@ -1,0 +1,14 @@
+[project]
+group = "rip.jade"
+artifact = "AdventOfCode"
+version = "1.0-SNAPSHOT"
+
+[build]
+java-version = "21"
+encoding = "UTF-8"
+
+[dependencies]
+# Dependencies go here when added via `forge add`
+
+[dependencies.test]
+# Test dependencies go here
