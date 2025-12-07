@@ -2,11 +2,10 @@
 
 ### Commands
 
+- ```forge init```
 - ```forge add```
-  - search maven central (fuzzy search?)
-  - track other upstreams?  
-    - how to add them?
 - ```forge search```
+- ```forge build```
 
 ### Other benefits
 
@@ -22,3 +21,14 @@
   - plugins
   - repos
   - multi module projects
+
+### TODOS
+
+- Search Functionality [More Info](Search.md)
+  - Proper searching of maven central (will be a nightmare)
+
+- Add Functionality [More Info](Add.md)
+  - building the forge.toml
+
+- Build Functionality [More Info](Build.md)
+  - building the forge.lock + pom.xml

@@ -28,6 +28,8 @@ func Execute() {
   rootCmd.AddCommand(addCmd)
   rootCmd.AddCommand(searchCmd)
   rootCmd.AddCommand(buildCmd)
+  rootCmd.AddCommand(lockCmd)
+  rootCmd.AddCommand(initCmd)
   rootCmd.PersistentFlags().StringVar(&name, "name", "World", "Your name")
   rootCmd.PersistentFlags().StringVar(&greeting, "greeting", "Hello", "Greeting message")
 
