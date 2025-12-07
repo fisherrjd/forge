@@ -30,8 +30,6 @@ func Execute() {
   rootCmd.AddCommand(buildCmd)
   rootCmd.AddCommand(lockCmd)
   rootCmd.AddCommand(initCmd)
-  rootCmd.PersistentFlags().StringVar(&name, "name", "World", "Your name")
-  rootCmd.PersistentFlags().StringVar(&greeting, "greeting", "Hello", "Greeting message")
 
   if err := rootCmd.Execute(); err != nil {
     fmt.Println(err)
