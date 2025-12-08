@@ -1,13 +1,13 @@
 [project]
 group = "rip.jade"
 artifact = "AdventOfCode"
-version = "1.0-SNAPSHOT"
+version = "1.0.0"
 
 [build]
 java-version = "21"
 encoding = "UTF-8"
 
-[dependencies]
+[dependencies.main]
 # Dependencies go here when added via `forge add`
 
 [dependencies.test]
