@@ -1,0 +1,23 @@
+[project]
+group = "com.example"
+artifact = "my-app"
+version = "0.1.0"
+
+[build]
+java-version = "17"
+
+[repositories]
+# Where to fetch dependencies from
+# maven-central = "https://repo.maven.apache.org/maven2/"
+
+[dependencies.main]
+# Production dependencies go here
+
+[dependencies.test]
+# Test dependencies go here
+
+[dependencies.runtime]
+# Runtime-only dependencies (optional)
+
+[dependencies.provided]
+# Provided scope dependencies (optional)
