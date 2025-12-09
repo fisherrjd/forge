@@ -24,7 +24,6 @@ type ProjectInfo struct {
 // BuildConfig contains build-related settings
 type BuildConfig struct {
 	JavaVersion string
-	Encoding    string
 }
 
 // Run initializes a new Forge project at the specified path
@@ -76,7 +75,6 @@ func buildTomlContent(config Config) string {
 
 	content.WriteString("[build]\n")
 	content.WriteString(fmt.Sprintf("java-version = %q\n", config.Build.JavaVersion))
-	content.WriteString(fmt.Sprintf("encoding = %q\n", config.Build.Encoding))
 	content.WriteString("\n")
 
 	content.WriteString("[repositories]\n")
@@ -126,7 +124,6 @@ func getDefaultConfig() Config {
 		},
 		Build: BuildConfig{
 			JavaVersion: "17",
-			Encoding:    "UTF-8",
 		},
 	}
 }
@@ -153,11 +150,6 @@ func promptForConfig() (Config, error) {
 	}
 
 	config.Build.JavaVersion, err = promptWithDefault(reader, "Java version", "17")
-	if err != nil {
-		return config, err
-	}
-
-	config.Build.Encoding, err = promptWithDefault(reader, "Encoding", "UTF-8")
 	if err != nil {
 		return config, err
 	}
