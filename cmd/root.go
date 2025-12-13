@@ -1,38 +1,37 @@
 package cmd
 
 import (
-  "fmt"
-  "os"
+	"fmt"
+	"os"
 
-  "github.com/spf13/cobra"
+	"github.com/spf13/cobra"
 )
 
-
 var (
-  greeting string
-  name     string
+	greeting string
+	name     string
 )
 
 var rootCmd = &cobra.Command{
-  Use:   "forge",
-  Short: "A CLI tool for managing Java Maven projects with ease",
-  Long:  "Forge is a modern command-line tool that simplifies Java Maven project management.",
-  Run: func(cmd *cobra.Command, args []string) {
-    hello := fmt.Sprintf("%s, %s!", greeting, name)
-    fmt.Println(hello)
-  },
+	Use:   "forge",
+	Short: "A CLI tool for managing Java Maven projects with ease",
+	Long:  "Forge is a modern command-line tool that simplifies Java Maven project management.",
+	Run: func(cmd *cobra.Command, args []string) {
+		hello := fmt.Sprintf("%s, %s!", greeting, name)
+		fmt.Println(hello)
+	},
 }
 
 func Execute() {
-  rootCmd.AddCommand(versionCmd)
-  rootCmd.AddCommand(addCmd)
-  rootCmd.AddCommand(searchCmd)
-  rootCmd.AddCommand(buildCmd)
-  rootCmd.AddCommand(lockCmd)
-  rootCmd.AddCommand(initCmd)
+	rootCmd.AddCommand(versionCmd)
+	rootCmd.AddCommand(addCmd)
+	rootCmd.AddCommand(searchCmd)
+	rootCmd.AddCommand(buildCmd)
+	// rootCmd.AddCommand(lockCmd) TODO in v2
+	rootCmd.AddCommand(initCmd)
 
-  if err := rootCmd.Execute(); err != nil {
-    fmt.Println(err)
-    os.Exit(1)
-  }
+	if err := rootCmd.Execute(); err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
 }
